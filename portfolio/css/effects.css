@@ -1,0 +1,113 @@
+/* effects.css: scroll effects, toast and mobile rules (keep this file last) */
+
+
+/* ==================================================================
+   Scroll progress bar, toast, back-to-top button, reveal animation
+   ================================================================== */
+
+#bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg,var(--a),var(--b));
+    z-index: 50;
+}
+
+#toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%,24px);
+    background: var(--text);
+    color: #0b0d17;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    z-index: 60;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translate(-50%,0);
+}
+
+#top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--s2);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    z-index: 45;
+}
+
+#top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#top:hover {
+    border-color: var(--a);
+}
+
+.rv {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .7s ease,transform .7s ease;
+}
+
+.rv.in {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ==================================================================
+   Mobile layout and reduced-motion rules (keep this file last)
+   ================================================================== */
+
+@media (max-width: 820px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .nav ul {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 56px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none!important;
+        transition: none!important;
+    }
+
+    .rv {
+        opacity: 1;
+        transform: none;
+    }
+
+    .fill {
+        width: var(--w);
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}

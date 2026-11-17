@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+    <!-- Styles (keep effects.css last) -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/effects.css">
+</head>
+
+<body>
+    <div id="bar"></div>
+
+    <!-- Top navigation -->
+    <header class="nav">
+        <div class="wrap">
+            <a class="logo" href="#top-of-page" id="logo"></a>
+            <ul id="menu"></ul>
+        </div>
+    </header>
+
+    <main class="wrap" id="top-of-page">
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <span class="pill">
+                <i></i>
+                <span id="status"></span>
+            </span>
+            <h1 id="h1"></h1>
+            <p class="lede" id="lede"></p>
+            <div class="btns">
+                <a class="btn main" href="#projects">View projects</a>
+                <button class="btn" id="copy">Copy email</button>
+            </div>
+            <div class="stats" id="stats"></div>
+        </section>
+
+        <!-- About and languages -->
+        <section id="about" class="rv">
+            <div class="split">
+                <div class="about">
+                    <div class="head"><h2>About me</h2></div>
+                    <div id="bio"></div>
+                </div>
+                <div>
+                    <div class="head"><h2>Languages</h2></div>
+                    <div id="langs"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="rv">
+            <div class="head"><h2>Skills</h2></div>
+            <div class="split">
+                <div class="group" id="hard"></div>
+                <div class="group" id="soft"></div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="head rv">
+                <h2>Projects</h2>
+                <div class="chips" id="filters" role="group" aria-label="Filter projects"></div>
+            </div>
+            <div class="grid" id="projGrid"></div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="rv">
+            <div class="head">
+                <h2>Education</h2>
+            </div>
+            <ol class="tl" id="education-list"></ol>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience" class="rv">
+            <div class="head">
+                <h2>Work Experience</h2>
+            </div>
+            <ol class="tl" id="jobs"></ol>
+        </section>
+
+        <!-- Certifications and awards -->
+        <section id="achievements" class="rv">
+            <div class="head">
+                <h2>Certifications and awards</h2></div>
+            <div class="grid" id="awards"></div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="rv">
+            <div class="cta">
+                <h2>Let’s build something together</h2>
+                <p id="ctaText"></p>
+                <a class="btn main" id="mail" href="#">Send an email</a>
+                <div class="links" id="links"></div>
+            </div>
+        </section>
+
+        <footer id="foot"></footer>
+    </main>
+
+    <!-- Project popup -->
+    <dialog id="dlg">
+        <button class="x" id="dx" aria-label="Close">✕</button>
+        <div class="dlg" id="dbody"></div>
+    </dialog>
+
+    <div id="toast" role="status"></div>
+    <button id="top" aria-label="Back to top">↑</button>
+
+    <!-- Your content (edit the files in data/) -->
+    <script src="data/profile.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="data/background.js"></script>
+
+    <!-- Page behaviour -->
+    <script src="js/page.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/effects.js"></script>
+</body>
+
+</html>

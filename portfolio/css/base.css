@@ -1,0 +1,246 @@
+/* base.css: colors, fonts, page layout, buttons and shared pieces (cards, tags, filter chips) */
+
+
+/* ==================================================================
+   Design tokens (colors, fonts), reset and page basics. Change colors here
+   ================================================================== */
+
+:root {
+    color-scheme: dark;
+    --bg: #0b0d17;
+    --s1: #121626;
+    --s2: #181d31;
+    --line: #242a44;
+    --text: #eceef7;
+    --muted: #8d95b3;
+    --a: #8ea2ff;
+    --b: #6ee7d8;
+    --r: 16px;
+    --sans: "Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono: "JetBrains Mono",ui-monospace,Menlo,monospace;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 1rem/1.7 var(--sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(600px 400px at var(--mx,70%) var(--my,10%),rgba(142,162,255,.13),transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 2px solid var(--a);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==================================================================
+   Section spacing, headings and grids
+   ================================================================== */
+
+section {
+    padding: 80px 0;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: clamp(1.8rem,4vw,2.5rem);
+    letter-spacing: -.03em;
+    margin: 0;
+    font-weight: 800;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 18px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+}
+
+.about p {
+    color: var(--muted);
+    font-size: 1.08rem;
+    margin: 0 0 16px;
+}
+
+
+/* ==================================================================
+   Buttons and the click ripple
+   ================================================================== */
+
+.btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    padding: 13px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--s1);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s,border-color .2s;
+}
+
+.btn:hover {
+    border-color: var(--a);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0) scale(.98);
+}
+
+.btn.main {
+    background: var(--a);
+    border-color: var(--a);
+    color: #0b0d17;
+}
+
+.rip {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,.35);
+    transform: scale(0);
+    animation: rip .6s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes rip {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+/* ==================================================================
+   Reusable pieces: cards, tags, filter chips
+   ================================================================== */
+
+.card {
+    background: var(--s1);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 26px;
+    transition: transform .25s,border-color .25s,background .25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #3a4373;
+    background: var(--s2);
+}
+
+.card h3 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+    letter-spacing: -.01em;
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.tag {
+    font: 500 .75rem var(--mono);
+    color: var(--a);
+    background: rgba(142,162,255,.1);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    font-size: .88rem;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.chip:hover {
+    color: var(--text);
+    border-color: var(--a);
+}
+
+.chip.on {
+    background: var(--a);
+    color: #0b0d17;
+    border-color: var(--a);
+}

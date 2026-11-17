@@ -1,0 +1,245 @@
+/* projects.css: project cards and the project popup with its screenshot gallery */
+
+
+/* ==================================================================
+   Project cards
+   ================================================================== */
+
+.proj {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.proj .yr {
+    font: 400 .78rem var(--mono);
+    color: var(--muted);
+}
+
+.proj.hide {
+    display: none;
+}
+
+.proj .more {
+    margin-top: 14px;
+    color: var(--a);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+
+/* ==================================================================
+   Project popup: dialog, screenshot gallery, thumbnails, details
+   ================================================================== */
+
+dialog {
+    background: var(--s1);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 0;
+    width: min(820px,94vw);
+    max-height: 86vh;
+    overflow: auto;
+}
+
+dialog::backdrop {
+    background: rgba(5,6,12,.7);
+    backdrop-filter: blur(4px);
+}
+
+dialog[open] {
+    animation: pop .28s cubic-bezier(.2,.9,.3,1.2);
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(.96);
+    }
+}
+
+.dlg {
+    padding: 32px;
+}
+
+.dlg h3 {
+    font-size: 1.6rem;
+    margin: 0 0 4px;
+    letter-spacing: -.02em;
+}
+
+.dlg p {
+    color: var(--muted);
+}
+
+.x {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--s2);
+}
+
+.x {
+    z-index: 2;
+    background: rgba(11,13,23,.75);
+}
+
+.gal {
+    position: relative;
+    overflow: hidden;
+    background: var(--s2);
+    aspect-ratio: 16/9;
+    margin: -32px -32px 24px;
+}
+
+.gal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* show the whole screenshot, never crop it */
+    display: block;
+}
+
+.gal img[hidden] {
+    display: none;
+}
+
+.ph {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--muted);
+    font-size: .92rem;
+    background: linear-gradient(135deg,rgba(142,162,255,.16),rgba(110,231,216,.1));
+}
+
+.gb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(11,13,23,.75);
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.gb:hover {
+    border-color: var(--a);
+}
+
+.gb.p {
+    left: 14px;
+}
+
+.gb.n {
+    right: 14px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+.dots i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.35);
+}
+
+.dots i.on {
+    background: #fff;
+}
+
+.meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin: 18px 0 8px;
+    padding: 16px 0;
+    border-block: 1px solid var(--line);
+}
+
+.meta small {
+    display: block;
+    color: var(--muted);
+    font-size: .78rem;
+}
+
+.meta b {
+    font-size: .95rem;
+}
+
+.blk h4 {
+    margin: 26px 0 8px;
+    font-size: 1rem;
+}
+
+.blk p,
+.blk li {
+    color: var(--muted);
+    margin: 0 0 6px;
+}
+
+.blk ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.thumbs {
+    display: flex;
+    gap: 10px;
+    margin: -10px 0 18px;
+    overflow-x: auto;
+    padding: 2px 2px 6px;
+}
+
+.thumbs button {
+    flex: none;
+    width: 96px;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    padding: 0;
+    opacity: .55;
+    background: var(--s2);
+    transition: .2s;
+}
+
+.thumbs button:hover {
+    opacity: .9;
+}
+
+.thumbs button.on {
+    border-color: var(--a);
+    opacity: 1;
+}
+
+.thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.cap {
+    color: var(--muted);
+    font-size: .88rem;
+    margin: -6px 0 18px;
+}
