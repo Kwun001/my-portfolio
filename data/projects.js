@@ -37,6 +37,41 @@ Object.assign(DATA, {
         { src: "images/projects/Travooli/Travooli User Management.png", caption: "User Management Page" },
         { src: "images/projects/Travooli/Travooli Delete Popup.png", caption: "Delete User Confirmation Popup" }
       ]
+    },
+    {
+      title: "pyBattler",
+      year: 2026,
+      summary: "A QR-based educational game designed to help students practise Python programming concepts through interactive gameplay.",
+      details: "pyBattler is a team-based educational game that combines physical cards with a web application. Players scan QR codes on physical cards to perform in-game actions and answer Python programming questions. I contributed to the database design and frontend and backend development.",
+      role: "Full-Stack Developer & Database Designer",
+      team: "6 people",
+      duration: "4 months",
+      problem: "Beginners may find learning programming concepts challenging through traditional learning methods, which can make practising and applying their knowledge less engaging.",
+      solution: "Developed an interactive educational game that combines physical QR cards, programming questions and turn-based gameplay to encourage students to practise Python control flow concepts.",
+      features: [
+        "QR Code Card Scanning",
+        "Python Programming Questions",
+        "Turn-Based Gameplay",
+        "Player Health and Card Management",
+        "Game Room Management",
+        "Leaderboard and Game History",
+        "User and Admin Management"
+      ],
+      learned: [
+        "Designing database structures and relationships based on system requirements.",
+        "Developing frontend and backend functionalities using Node.js and Express.",
+        "Integrating QR code scanning with web application functionality.",
+        "Implementing game logic and managing player actions.",
+        "Collaborating with team members throughout the development process."
+      ],
+      tags: ["Web app", "Solo Project"],
+      stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "Pug", "MySQL", "XAMPP", "phpMyAdmin"],
+      link: "",
+      repo: "https://github.com/Kwun001/pyBattler",
+      video: "",
+      images: [
+        { src: "", caption: "" }
+      ]
     }
   ],
 });
