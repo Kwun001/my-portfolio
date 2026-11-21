@@ -42,9 +42,9 @@ Object.assign(DATA, {
       title: "pyBattler",
       year: 2026,
       summary: "A QR-based educational game designed to help students practise Python programming concepts through interactive gameplay.",
-      details: "pyBattler is a team-based educational game that combines physical cards with a web application. Players scan QR codes on physical cards to perform in-game actions and answer Python programming questions. I contributed to the database design and frontend and backend development.",
-      role: "Full-Stack Developer & Database Designer",
-      team: "6 people",
+      details: "pyBattler is a team-based educational game that combines physical cards with a web application. Players scan QR codes on physical cards to perform in-game actions and answer Python programming questions.",
+      role: "Solo Developer – System Design & Full-Stack Development",
+      team: "1 person (Individual Project)",
       duration: "4 months",
       problem: "Beginners may find learning programming concepts challenging through traditional learning methods, which can make practising and applying their knowledge less engaging.",
       solution: "Developed an interactive educational game that combines physical QR cards, programming questions and turn-based gameplay to encourage students to practise Python control flow concepts.",
@@ -62,7 +62,7 @@ Object.assign(DATA, {
         "Developing frontend and backend functionalities using Node.js and Express.",
         "Integrating QR code scanning with web application functionality.",
         "Implementing game logic and managing player actions.",
-        "Collaborating with team members throughout the development process."
+        "Managing the complete development process independently, from planning to implementation."
       ],
       tags: ["Web app", "Solo Project"],
       stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "Pug", "MySQL", "XAMPP", "phpMyAdmin"],
@@ -70,7 +70,18 @@ Object.assign(DATA, {
       repo: "https://github.com/Kwun001/pyBattler",
       video: "",
       images: [
-        { src: "", caption: "" }
+        //admin interfaces
+        { src: "images/projects/pyBattler/Login Page.png", caption: "Login Page" },
+        { src: "images/projects/pyBattler/Admin Dashboard.png", caption: "Admin Dashboard" },
+        { src: "images/projects/pyBattler/Admin -Manage Question Page.png", caption: "Admin - Manage Question Page 1" },
+        { src: "images/projects/pyBattler/Admin - Manage Question Page 2.png", caption: "Admin - Manage Question Page 2" },
+
+        //user interfaces
+        { src: "images/projects/pyBattler/Room Lobby.png", caption: "Room Lobby" },
+        { src: "images/projects/pyBattler/Game Page.png", caption: "Game Page" },
+        { src: "images/projects/pyBattler/Question Page.png", caption: "Question Page" },
+        { src: "images/projects/pyBattler/Battle Leaderboard.png", caption: "Battle Leaderboard" },
+        { src: "images/projects/pyBattler/Profile Page.png", caption: "Profile Page" }
       ]
     }
   ]
