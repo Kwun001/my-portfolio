@@ -73,5 +73,5 @@ Object.assign(DATA, {
         { src: "", caption: "" }
       ]
     }
-  ],
+  ]
 });
