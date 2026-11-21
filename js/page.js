@@ -210,6 +210,7 @@ const sections = [
     ["about", "About"],
     ["skills", "Skills"],
     ["projects", "Projects"],
+    ["education", "Background"],
     ["experience", "Background"],
     ["achievements", "Awards"],
     ["contact", "Contact"]
